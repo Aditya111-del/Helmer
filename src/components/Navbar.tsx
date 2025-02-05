@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -7,8 +8,8 @@ const Navbar = () => {
         <div className="flex justify-center items-center">
           {/* Navigation Links */}
           <div className="flex space-x-12 items-center">
-            <a href="/" className="text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300">HOME</a>
-            <a href="/about" className="text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300">ABOUT</a>
+            <Link to="/" className="text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300">HOME</Link>
+            <Link to="/about" className="text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300">ABOUT</Link>
 
             {/* Image placed here */}
             <div className="mx-8"> {/* Add margin to create space */}
@@ -19,8 +20,8 @@ const Navbar = () => {
 />
             </div>
 
-            <a href="/Services" className="text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300">SERVICE</a>
-            <a href="/Contact" className="text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300">CONTACTS</a>
+            <Link to="/Services" className="text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300">SERVICE</Link>
+            <Link to="/Contact" className="text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300">CONTACTS</Link>
           </div>
         </div>
       </div>
