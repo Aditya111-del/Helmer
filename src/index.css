@@ -1,0 +1,333 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap');
+
+@layer base {
+  body {
+    @apply bg-[#020817] text-white antialiased;
+    font-family: 'Syne', sans-serif;
+  }
+}
+
+@layer components {
+  .nav-link {
+    @apply text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300;
+  }
+
+  .portfolio-card {
+    @apply relative bg-[#041140] rounded-2xl overflow-hidden;
+  }
+
+  .portfolio-card::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-[#041140] opacity-90 z-10;
+  }
+}
+
+.button-outline {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 2rem;
+  font-size: 0.875rem;
+  letter-spacing: 0.2em;
+  color: rgba(255, 255, 255, 0.9);
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 9999px;
+  transition: all 0.3s ease;
+}
+
+.button-outline:hover {
+  background: white;
+  color: #020817;
+}
+
+.button-outline .arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.button-outline:hover .arrow {
+  transform: translateX(4px);
+}
+
+.star {
+  @apply absolute w-[2px] h-[2px] bg-white/10 rounded-full;
+  animation: twinkle 4s infinite;
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.1; }
+  50% { opacity: 0.7; }
+}
+/* Add this to your existing index.css */
+.about-card {
+  @apply bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/10;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  @apply bg-white/20 border-white/20;
+}
+
+/* Add this to your existing index.css */
+.hero-section {
+  @apply min-h-screen flex flex-col items-center justify-center text-center;
+  background: radial-gradient(circle, rgba(2, 8, 23, 0.8), rgba(2, 8, 23, 1));
+}
+
+.hero-title {
+  @apply text-8xl font-light tracking-wide mb-6;
+  background: linear-gradient(45deg, #ffffff, #ffffff90);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.hero-divider {
+  @apply w-32 h-px bg-white/30 mb-6;
+}
+
+.hero-subtitle {
+  @apply text-xl tracking-[0.3em] text-white/90;
+}
+/* Add this to your existing index.css */
+.navbar {
+  @apply fixed w-full z-50 top-0 py-8;
+  background: rgba(2, 8, 23, 0.8);
+  backdrop-filter: blur(10px);
+}
+
+.nav-link {
+  @apply text-sm tracking-[0.2em] text-white/70 hover:text-white transition-colors duration-300;
+}
+
+/* About.css */
+.card-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.card {
+  position: relative;
+  z-index: 1;
+  background: rgba(255, 255, 255, 0.05); /* Slightly transparent background */
+}
+
+.card::before,
+.card::after {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 70%);
+  opacity: 0;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: -1;
+}
+
+.card::after {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 70%);
+}
+
+.card:hover::before,
+.card:hover::after {
+  opacity: 1;
+  transform: translate(50%, 50%);
+}
+
+/* Add a subtle glow animation */
+@keyframes glow {
+  0% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+  }
+}
+
+.card {
+  animation: glow 3s infinite ease-in-out;
+}
+
+/* Add this to your global CSS file */
+.drop-shadow-glow {
+  filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.6)); /* Adjust the glow color and intensity */
+}
+
+/* Solar System Animation */
+.solar-system {
+  position: relative;
+  width: 600px;
+  height: 600px;
+  margin: 0 auto;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  background: #ffcc00;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 50px #ffcc00;
+}
+
+.planet {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 50%;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* Mercury */
+.mercury {
+  width: 8px;
+  height: 8px;
+  background: #a8a8a8;
+  animation: orbit 2.4s infinite;
+  transform-origin: 50px 50px;
+}
+
+/* Venus */
+.venus {
+  width: 12px;
+  height: 12px;
+  background: #ffcc99;
+  animation: orbit 6.1s infinite;
+  transform-origin: 80px 80px;
+}
+
+/* Earth */
+.earth {
+  width: 14px;
+  height: 14px;
+  background: #00a8ff;
+  animation: orbit 10s infinite;
+  transform-origin: 120px 120px;
+}
+
+/* Mars */
+.mars {
+  width: 10px;
+  height: 10px;
+  background: #ff6b6b;
+  animation: orbit 18.8s infinite;
+  transform-origin: 160px 160px;
+}
+
+/* Jupiter */
+.jupiter {
+  width: 30px;
+  height: 30px;
+  background: #ff9f43;
+  animation: orbit 118.6s infinite;
+  transform-origin: 220px 220px;
+}
+
+/* Saturn */
+.saturn {
+  width: 25px;
+  height: 25px;
+  background: #e2b07e;
+  animation: orbit 294.6s infinite;
+  transform-origin: 280px 280px;
+}
+
+/* Uranus */
+.uranus {
+  width: 18px;
+  height: 18px;
+  background: #00cec9;
+  animation: orbit 840s infinite;
+  transform-origin: 340px 340px;
+}
+
+/* Neptune */
+.neptune {
+  width: 17px;
+  height: 17px;
+  background: #0984e3;
+  animation: orbit 1648s infinite;
+  transform-origin: 400px 400px;
+}
+
+/* Pluto */
+.pluto {
+  width: 6px;
+  height: 6px;
+  background: #a29bfe;
+  animation: orbit 2477s infinite;
+  transform-origin: 450px 450px;
+}
+
+/* Orbit Animation */
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(var(--distance)) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(var(--distance)) rotate(-360deg);
+  }
+}
+
+/* Custom Distances and Angles */
+.mercury { --distance: 50px; }
+.venus { --distance: 80px; }
+.earth { --distance: 120px; }
+.mars { --distance: 160px; }
+.jupiter { --distance: 220px; }
+.saturn { --distance: 280px; }
+.uranus { --distance: 340px; }
+.neptune { --distance: 400px; }
+.pluto { --distance: 450px; }
+
+@keyframes orbit {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg) translateX(calc(var(--distance) * 1.2)) translateY(calc(var(--distance) * 0.8)) rotate(0deg);
+  }
+  50% {
+    transform: translate(-50%, -50%) rotate(180deg) translateX(calc(var(--distance) * 0.8)) translateY(calc(var(--distance) * 1.2)) rotate(-180deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg) translateX(calc(var(--distance) * 1.2)) translateY(calc(var(--distance) * 0.8)) rotate(-360deg);
+  }
+}
+/* Service Slider Styles */
+.service-slider .swiper-button-next,
+.service-slider .swiper-button-prev {
+  color: white;
+  background-color: rgba(255, 255, 255, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.service-slider .swiper-button-next:hover,
+.service-slider .swiper-button-prev:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.service-slider .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.service-slider .card {
+  width: 100%;
+  height: 100%;
+}
