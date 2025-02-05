@@ -14,7 +14,7 @@ const Navbar = () => {
             {/* Image placed here */}
             <div className="mx-8"> {/* Add margin to create space */}
             <img
-  src="assets\images\logo.png" // Assuming the image is in the public/images directory
+  src="https://res.cloudinary.com/dbluj8fpu/image/upload/v1738782951/Helmer/okuifnbdwuxw8em3ia2w.png" // Assuming the image is in the public/images directory
   alt="Logo"
   className="w-12 h-12"
 />
