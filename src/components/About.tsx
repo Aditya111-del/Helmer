@@ -2,12 +2,10 @@ import { Link } from 'react-router-dom'; // Import Link for routing
 import '../index.css'; // Import your custom CSS styles
 
 const About = () => {
-
   return (
     <section className="container mx-auto px-4 py-20">
       {/* Title */}
       <h2 className="text-5xl font-bold text-center mb-20">STUDIO</h2>
-
       {/* Grid Layout */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {/* Card 1: SERVICES */}
@@ -23,7 +21,6 @@ const About = () => {
             </Link>
           </div>
         </div>
-
         {/* Card 2: Shloak */}
         <div className="card-container">
           <div className="card bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105 min-h-[300px] flex flex-col justify-between">
@@ -31,13 +28,17 @@ const About = () => {
             <p className="text-white/80 mb-6">
               With our revolutionary beats and Sound Science, we present you Shloak, a music company.
             </p>
-            {/* Explore Button with Link to Service */}
-            <Link to="/services/shloak" className="px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 hover:bg-white/20 hover:text-white transition-all duration-300">
+            {/* External Link to Shloak Website */}
+            <a
+              href="https://shloak.vercel.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2 bg-white/10 backdrop-blur-sm rounded-full text-white/80 hover:bg-white/20 hover:text-white transition-all duration-300"
+            >
               Explore
-            </Link>
+            </a>
           </div>
         </div>
-
         {/* Card 3: LINEA VOL.1 */}
         <div className="card-container">
           <div className="card bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105 min-h-[300px] flex flex-col justify-between">
@@ -51,7 +52,6 @@ const About = () => {
             </Link>
           </div>
         </div>
-
         {/* Card 4: FINANCE */}
         <div className="card-container">
           <div className="card bg-gradient-to-b from-white/5 to-white/0 backdrop-blur-sm rounded-lg p-6 border border-white/10 hover:border-white/20 transition-all duration-300 transform hover:scale-105 min-h-[300px] flex flex-col justify-between">
